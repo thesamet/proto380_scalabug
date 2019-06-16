@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package jpkg;
+
+option java_multiple_files = true;
+
+message Nested1 {
+  message Nested2 {
+    message Nested3 {
+      enum X {
+        V1 = 0;
+      }
+    }
+  }
+  optional Nested2.Nested3.X x = 1;
+}
