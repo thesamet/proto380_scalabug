@@ -1,0 +1,21 @@
+// File id 0. messages: Some(0)-Some(28). Enums: Some(0)-Some(60)
+syntax = "proto3";
+
+option java_package = "jpkg";
+option java_multiple_files = true;
+
+import "scalapb/scalapb.proto";
+
+option (scalapb.options).package_name = "spkg";
+
+message AnotherOne {}
+
+message Scope1 {  // message 0
+  message Scope2 {  // message 1
+    message Scope3 {  // message 3
+      message Scope4 {}
+    }
+  }
+
+  Scope2.Scope3.Scope4 msg = 1;
+}
